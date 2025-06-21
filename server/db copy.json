@@ -1,0 +1,31 @@
+{
+  "carreras": [
+    {
+      "id": "lic-computacion",
+      "nombre": "Licenciatura en Ciencias de la Computación",
+      "materias": ["algo1", "analisis1", "algebra"]
+    }
+  ],
+  "materias": [
+    {
+      "id": "algo1",
+      "nombre": "Algoritmos I"
+    },
+    {
+      "id": "analisis1",
+      "nombre": "Análisis Matemático I"
+    },
+    {
+      "id": "algebra",
+      "nombre": "Álgebra"
+    }
+  ],
+  "alumnos": [
+    {
+      "id": "1",
+      "nombre": "Juan Pérez",
+      "materias_aprobadas": ["algo1"],
+      "materias_en_curso": ["analisis1"]
+    }
+  ]
+}
