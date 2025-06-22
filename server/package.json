@@ -24,5 +24,8 @@
   "_moduleAliases": {
     "@": "src",
     "@services": "src/services"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
   }
 }

@@ -1,12 +1,30 @@
 import db  from '../../db.json' with { type: 'json' };
+import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient();
 
-export function getAlumnoById(id) {
-    return db.alumnos.find(alumno => alumno.id === id) || null;
+export async function getAlumnos(){
+    const alumnos = await prisma.alumno.findMany().catch(error => {
+        console.error("Error al obtener los alumnos:", error);
+        return null;
+    });
+    return alumnos || [];
+}
+
+export async function getAlumnoById(id) {
+    return await prisma.alumno.findUnique({
+        where: { id: id }
+    }) || null;
 }
 
 export function addAlumno(alumno) {
-    const newId = db.alumnos.length > 0 ? Math.max(...db.alumnos.map(a => a.id)) + 1 : 1;
-    const newAlumno = { id: newId, ...alumno };
-    db.alumnos.push(newAlumno);
-    return newAlumno;
+    const data = {
+        nombre: alumno.nombre,
+        carreraId: alumno.carrera,
+    }
+    return prisma.alumno.create({
+        data: data
+    }).catch(error => {
+        console.error("Error al crear el alumno:", error);
+        return "error";
+    });
 }
