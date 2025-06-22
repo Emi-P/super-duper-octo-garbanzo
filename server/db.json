@@ -2,11 +2,17 @@
   "carreras": [
     {
       "id": 1,
-      "nombre": "Licenciatura en Ciencias de la Computación",
+      "nombre": "Licenciatura en ciencias de la computación",
       "materias": [
-        "algo1",
-        "analisis1",
-        "algebra"
+        1,2,3
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Licenciatura en física",
+      "materias": [
+        2,
+        3
       ]
     }
   ],

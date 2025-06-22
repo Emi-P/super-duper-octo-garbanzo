@@ -1,4 +1,4 @@
-import db  from '../../../db.json' with { type: 'json' };
+import db  from '../../db.json' with { type: 'json' };
 
 export function getAlumnoById(id) {
     return db.alumnos.find(alumno => alumno.id === id) || null;

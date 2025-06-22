@@ -1,4 +1,4 @@
-import { getAlumnoById } from "../routes/services/alumnoService.js";
+import { getAlumnoById } from "../services/alumnoService.js";
 
 export async function getAlumno(req, res) {
     const data = getAlumnoById(parseInt(req.params.id));
