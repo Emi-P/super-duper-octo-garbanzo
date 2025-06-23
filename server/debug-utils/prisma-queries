@@ -1,0 +1,21 @@
+export async function MtMinclude(alumnoId) {
+    try {
+        const query = await prisma.alumno.findUnique({
+            where: {
+                id: alumnoId,
+            },
+            include: {
+                materiasAprobadas: true,
+                Carrera: true
+            }
+        });
+        
+        console.log(query);
+        console.log(query.materiasAprobadas)
+        
+    } catch (error) {
+        console.error("Error al obtener el alumno:", error);
+        return null;
+        
+    }
+}
